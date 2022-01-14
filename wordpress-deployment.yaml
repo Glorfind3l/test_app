@@ -15,7 +15,7 @@ spec:
 apiVersion: external-secrets.io/v1alpha1
 kind: ExternalSecret
 metadata:
-  name: wordpressCreds
+  name: wp-creds
 spec:
   refreshInterval: 5m
   secretStoreRef:
@@ -70,7 +70,7 @@ spec:
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: wordpressCreds
+              name: wp-creds
               key: Mysql_Password
         ports:
         - containerPort: 80
