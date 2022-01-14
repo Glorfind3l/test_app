@@ -52,7 +52,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: wp-creds
-              key: Mysql_Password
+              key: dbpassword
         ports:
         - containerPort: 3306
           name: mysql

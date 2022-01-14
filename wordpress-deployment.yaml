@@ -24,10 +24,10 @@ spec:
   target:
     creationPolicy: Owner
   data:
-  - secretKey: Mysql_Password
+  - secretKey: dbpassword
     remoteRef:
-      key: Test_app
-      property: MysqlPassword
+      key: testapp/wordpress
+      property: mysqlpassword
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -71,7 +71,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: wp-creds
-              key: Mysql_Password
+              key: dbpassword
         ports:
         - containerPort: 80
           name: wordpress
